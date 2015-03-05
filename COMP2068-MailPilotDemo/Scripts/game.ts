@@ -1,4 +1,14 @@
-﻿var canvas;
+﻿/// <reference path="typings/createjs-lib/createjs-lib.d.ts" />
+/// <reference path="typings/easeljs/easeljs.d.ts" />
+/// <reference path="typings/preloadjs/preloadjs.d.ts" />
+/// <reference path="typings/soundjs/soundjs.d.ts" />
+/// <reference path="typings/tweenjs/tweenjs.d.ts" />
+
+
+
+
+
+var canvas;
 var stage: createjs.Stage;
 var assetLoader: createjs.LoadQueue;
 
@@ -41,4 +51,7 @@ function gameLoop() {
 function main() {
     
     console.log("Getting the game started");
+
+    var plane: createjs.Bitmap = new createjs.Bitmap(assetLoader.getResult("plane"));
+    stage.addChild(plane);
 }
